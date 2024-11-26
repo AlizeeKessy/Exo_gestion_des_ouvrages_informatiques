@@ -70,9 +70,10 @@ function showBooks(_books) {
             _books[a].thumbnailUrl = "https://p1.storage.canalblog.com/14/48/1145642/91330992_o.png"
         }
 
+        // pour extraire les 20 premiers caractètes du titre d'un livre de la bibliothèque
         let titre;
         if (_books[a].title.length > 20) {
-            titre = _books[a].title.substring(0, 20) + "(...";
+            titre = _books[a].title.substring(0, 20) + "(...)";
         }
         else {
             titre = _books[a].title;
@@ -81,6 +82,8 @@ function showBooks(_books) {
 
 
         book.innerHTML = '<img src="' + _books[a].thumbnailUrl + '"/>';
+        // pour afficher nos titres dans les cards
+        '<h1 class = "booktitle"><span class = "infobulle" title = "' + _books[a].title + '">' + titre + '</span></h1>';
 
         listBooks.appendChild(book);
     }
